@@ -83,11 +83,11 @@ namespace Entidades
             char[] arrayBinario = binario.ToCharArray();
             Array.Reverse(arrayBinario);
 
-            if(EsBinario(binario))
+            if (EsBinario(binario))
             {
-                for(int i=0;i<arrayBinario.Length;i++)
+                for (int i = 0; i < arrayBinario.Length; i++)
                 {
-                    if(arrayBinario[i]=='1')
+                    if (arrayBinario[i] == '1')
                     {
                         sumaDecimal += Math.Pow(2, i);
                     }
@@ -96,11 +96,12 @@ namespace Entidades
                 return sumaDecimal.ToString();
             }
 
-            return "ERROR";
+            return "Valor invalido";
         }
 
         public string DecimalBinario(double numero)
         {
+
             if (numero > 0)
             {
                 string binario = "";
@@ -127,7 +128,7 @@ namespace Entidades
                 }
                 else
                 {
-                    return "ERROR";
+                    return "Valor invalido";
                 }
             }
         }

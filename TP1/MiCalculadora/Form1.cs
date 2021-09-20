@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entidades;
+using System;
 using System.Windows.Forms;
-using Entidades;
 
 namespace MiCalculadora
 {
@@ -21,8 +14,8 @@ namespace MiCalculadora
         private static double Operar(string numero1, string numero2, string operador)
         {
             char caracterOperador = '+';
-            
-            for(int i=0;i<operador.Length;i++)
+
+            for (int i = 0; i < operador.Length; i++)
             {
                 caracterOperador = operador[i];
             }
@@ -36,11 +29,20 @@ namespace MiCalculadora
         private void btnOperar_Click(object sender, EventArgs e)
         {
             double resultado;
-            
+            double numero1 = 0;
+            double numero2 = 0;
+            string operador = "+";
+
             resultado = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text);
 
+            double.TryParse(txtNumero1.Text, out numero1);
+            double.TryParse(txtNumero2.Text, out numero2);
+
+            if (cmbOperador.Text == "-" || cmbOperador.Text == "/" || cmbOperador.Text == "*")
+                operador = cmbOperador.Text;
+
             lblResultado.Text = resultado.ToString();
-            lstOperaciones.Items.Add(txtNumero1.Text + " " + cmbOperador.Text + " " + txtNumero2.Text + " = " + resultado);
+            lstOperaciones.Items.Add(numero1 + " " + operador + " " + numero2 + " = " + resultado);
 
         }
 
@@ -52,7 +54,7 @@ namespace MiCalculadora
         private void Limpiar()
         {
             lblResultado.Text = "0";
-            cmbOperador.Text = "";
+            cmbOperador.SelectedIndex = 0;
             txtNumero1.Text = "";
             txtNumero2.Text = "";
             lstOperaciones.Items.Clear();
@@ -69,17 +71,21 @@ namespace MiCalculadora
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             string numDecimal = lblResultado.Text;
+            int numEntero;
 
             Operando binario = new Operando();
 
-            string numBinario = binario.DecimalBinario(numDecimal);
+            string numBinario = "Valor invalido";
+
+            if (int.TryParse(numDecimal, out numEntero))
+                numBinario = binario.DecimalBinario(numDecimal);
 
 
             lblResultado.Text = numBinario;
 
-            if(numBinario=="ERROR")
+            if (numBinario == "Valor invalido")
             {
-                lstOperaciones.Items.Add("No es posible convertir numeros negativos");
+                lstOperaciones.Items.Add("No es posible convertir a binario");
             }
             else
             {
@@ -98,7 +104,7 @@ namespace MiCalculadora
 
             lblResultado.Text = numDecimal;
 
-            if (numDecimal == "ERROR")
+            if (numDecimal == "Valor invalido")
             {
                 lstOperaciones.Items.Add("No es un numero binario");
             }
