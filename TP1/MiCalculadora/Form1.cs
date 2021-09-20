@@ -11,6 +11,13 @@ namespace MiCalculadora
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Crea dos numeros de la clase Operando y llama al metodo Operar de la clase Calculadora
+        /// </summary>
+        /// <param name="numero1"></param>
+        /// <param name="numero2"></param>
+        /// <param name="operador"></param>
+        /// <returns></returns>
         private static double Operar(string numero1, string numero2, string operador)
         {
             char caracterOperador = '+';
@@ -26,6 +33,11 @@ namespace MiCalculadora
             return Calculadora.Operar(num1, num2, caracterOperador);
         }
 
+        /// <summary>
+        /// Implementa el metodo operar e imprime el resultado y la operacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
             double resultado;
@@ -46,11 +58,19 @@ namespace MiCalculadora
 
         }
 
+        /// <summary>
+        /// Implementa el metodo Limpiar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
+        /// <summary>
+        /// Limpia los textBox, Labels y Listas del Form
+        /// </summary>
         private void Limpiar()
         {
             lblResultado.Text = "0";
@@ -60,6 +80,11 @@ namespace MiCalculadora
             lstOperaciones.Items.Clear();
         }
 
+        /// <summary>
+        /// Al hacer click sobre el boton Cerrar se abre un cuadro preguntado por si o por no para cerrar el Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if ((MessageBox.Show("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
@@ -68,6 +93,11 @@ namespace MiCalculadora
             }
         }
 
+        /// <summary>
+        /// LLama al metodo DecimalBinario e imprime el numero convertido a binario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             string numDecimal = lblResultado.Text;
@@ -93,6 +123,11 @@ namespace MiCalculadora
             }
         }
 
+        /// <summary>
+        /// LLama al metodo BinarioDecimal e imprime el numero convertido a decimal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             string numBinario = lblResultado.Text;

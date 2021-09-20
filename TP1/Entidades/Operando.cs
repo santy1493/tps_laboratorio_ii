@@ -6,6 +6,8 @@ namespace Entidades
     {
         private double numero;
 
+        #region Constructores
+
         public Operando()
         {
             this.numero = 0;
@@ -29,6 +31,13 @@ namespace Entidades
             this.Numero = strNumero;
         }
 
+        #endregion
+
+        /// <summary>
+        /// Valida que el string ingresado se pueda convertir en double
+        /// </summary>
+        /// <param name="strNumero"></param>
+        /// <returns></returns>
         private double ValidarOperando(string strNumero)
         {
             double numero = 0;
@@ -36,6 +45,9 @@ namespace Entidades
 
             return numero;
         }
+
+
+        #region Sobrecarga de operadores
 
         public static double operator +(Operando numero1, Operando numero2)
         {
@@ -61,6 +73,16 @@ namespace Entidades
 
         }
 
+        #endregion
+
+
+        #region Operaciones con Binarios
+
+        /// <summary>
+        /// Valida que el numero es binario
+        /// </summary>
+        /// <param name="binario"></param>
+        /// <returns>true si es binario, de lo contrario false</returns>
         private bool EsBinario(string binario)
         {
             char letra;
@@ -77,6 +99,11 @@ namespace Entidades
             return binario.Length == contador;
         }
 
+        /// <summary>
+        /// Convierte el numero binario en decimal
+        /// </summary>
+        /// <param name="binario"></param>
+        /// <returns>El numero decimal, de lo contrario "Valor invalido"</returns>
         public string BinarioDecimal(string binario)
         {
             double sumaDecimal = 0;
@@ -99,6 +126,11 @@ namespace Entidades
             return "Valor invalido";
         }
 
+        /// <summary>
+        /// Convierte el numero decimal en binario
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <returns>El numero binario, de lo contrario "Valor invalido"</returns>
         public string DecimalBinario(double numero)
         {
 
@@ -139,5 +171,7 @@ namespace Entidades
 
             return DecimalBinario(this.numero);
         }
+
+        #endregion
     }
 }
