@@ -33,7 +33,7 @@ namespace Entidades
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
-        protected virtual ETamanio Tamanio { get;}
+        protected abstract ETamanio Tamanio { get;}
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.
@@ -73,15 +73,21 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return (v1.chasis == v2.chasis);
+            return !(v1 == v2);
         }
 
-        //public override bool Equals(object obj)
-        //{
-        //    Vehiculo vehiculo = obj as Vehiculo;
-
-        //    return vehiculo is not null && vehiculo == this;
-        //}
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Vehiculo))
+            {
+                return false;
+            }
+            return (this.chasis == ((Vehiculo)obj).chasis);
+        }
 
         public override int GetHashCode()
         {

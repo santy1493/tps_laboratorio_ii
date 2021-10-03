@@ -31,3 +31,13 @@ C:\Users\santy\Desktop\tp2 por mi\TP-02\TP-02\obj\Debug\TP-02.csproj.CoreCompile
 C:\Users\santy\Desktop\tp2 por mi\TP-02\TP-02\obj\Debug\TP-02.csproj.CopyComplete
 C:\Users\santy\Desktop\tp2 por mi\TP-02\TP-02\obj\Debug\TP-02.exe
 C:\Users\santy\Desktop\tp2 por mi\TP-02\TP-02\obj\Debug\TP-02.pdb
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\bin\Debug\TP-02.exe.config
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\bin\Debug\TP-02.exe
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\bin\Debug\TP-02.pdb
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\bin\Debug\Entidades.dll
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\bin\Debug\Entidades.pdb
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\obj\Debug\TP-02.csproj.AssemblyReference.cache
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\obj\Debug\TP-02.csproj.CopyComplete
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\obj\Debug\TP-02.exe
+C:\Users\santy\Desktop\tps_laboratorio_ii\TP-02\TP-02\obj\Debug\TP-02.pdb

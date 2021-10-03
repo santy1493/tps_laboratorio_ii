@@ -9,7 +9,7 @@ namespace Entidades
     /// <summary>
     /// No podrá tener clases heredadas.
     /// </summary>
-    public class Taller
+    public sealed class Taller
     {
         List<Vehiculo> vehiculos;
         int espacioDisponible;
@@ -35,7 +35,7 @@ namespace Entidades
         /// Muestro el estacionamiento y TODOS los vehículos
         /// </summary>
         /// <returns></returns>
-        public  override string ToString()
+        public override string ToString()
         {
             return Listar(this, ETipo.Todos);
         }
@@ -50,7 +50,7 @@ namespace Entidades
         /// <param name="taller">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
         /// <returns></returns>
-        public string Listar(Taller taller, ETipo tipo)
+        public static string Listar(Taller taller, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
 
