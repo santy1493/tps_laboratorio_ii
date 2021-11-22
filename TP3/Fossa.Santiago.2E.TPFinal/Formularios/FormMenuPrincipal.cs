@@ -23,6 +23,7 @@ namespace Formularios
             InitializeComponent();
             mundo = new Mundo();
             btnInformes.Enabled = false;
+            dgvPaises.Enabled = false;
 
         }
 
@@ -48,6 +49,8 @@ namespace Formularios
         {
             if (mundo.ListaPaises.Count > 0)
             {
+                dgvPaises.Enabled = true;
+
                 dgvPaises.Rows.Clear();
 
                 int n;

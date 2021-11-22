@@ -297,7 +297,7 @@ namespace Entidades
         /// Crea una lista de tipo Dictianary donde la Key es el nombre del continente y el Value es la cantidad de infectados de ese continente
         /// </summary>
         /// <returns></returns>
-        private long PoblacionDeUnContinente(EContinente continente)
+        private double PoblacionDeUnContinente(EContinente continente)
         {
             Dictionary<EContinente, long> listaContinentes = ListaPoblacionContinente();
 
@@ -383,15 +383,22 @@ namespace Entidades
 
             EContinente continente = Pais.ValidarContinente(_continente);
 
-            long poblacion = PoblacionDeUnContinente(continente);
+            double poblacion = PoblacionDeUnContinente(continente);
             long infectados = InfectadosDeUnContinente(continente);
             long fallecidos = FallecidosDeUnContinente(continente);
             long vacunados = VacunadosDeUnContinente(continente);
 
+            double porcentajeInfectados = infectados * 100 / poblacion;
+            porcentajeInfectados = Math.Round((Double)porcentajeInfectados, 2);
+            double porcentajeFallecidos = fallecidos * 100 / (double)infectados;
+            porcentajeFallecidos = Math.Round((Double)porcentajeFallecidos, 2);
+            double porcentajeVacunados = vacunados * 100 / poblacion;
+            porcentajeVacunados = Math.Round((Double)porcentajeVacunados, 2);
+
             sb.AppendLine($"Poblacion total: {poblacion}");
-            sb.AppendLine($"Infectados: {infectados}");
-            sb.AppendLine($"Fallecidos: {fallecidos}");
-            sb.AppendLine($"Vacunados: {vacunados}");
+            sb.AppendLine($"Infectados: {infectados} ({porcentajeInfectados}%)");
+            sb.AppendLine($"Fallecidos: {fallecidos} ({porcentajeFallecidos}%)");
+            sb.AppendLine($"Vacunados: {vacunados} ({porcentajeVacunados}%)");
 
             return sb.ToString();
 

@@ -23,6 +23,8 @@ namespace Formularios
         {
             InitializeComponent();
             mundo = new Mundo();
+            ImportarBBDD();
+            btnImpDB.Enabled = false;
             btnInformes.Enabled = false;
             dgvPaises.Hide();
             Task iniciarForm = Task.Run(() => IniciarForm());
@@ -154,6 +156,7 @@ namespace Formularios
             }
             else
             {
+                this.btnImpDB.Enabled = true;
                 this.lblCargandoGrilla.Text = "";
                 this.dgvPaises.Show();
                 ActualizarDatosForm();
@@ -224,14 +227,22 @@ namespace Formularios
         /// <param name="e"></param>
         private void btnExpDB_Click(object sender, EventArgs e)
         {
-            try
+            if(mundo.ListaPaises.Count>0)
             {
-                ConexionDB.Insertar(mundo.ListaPaises);
+                try
+                {
+                    ConexionDB.Insertar(mundo.ListaPaises);
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Se produjo un error al exportar a la Base de Datos", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch (SqlException)
+            else
             {
-                MessageBox.Show("Se produjo un error al exportar a la Base de Datos", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se puede exportar, la lista esta vacia", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         /// <summary>
@@ -241,10 +252,15 @@ namespace Formularios
         /// <param name="e"></param>
         private void btnImpDB_Click(object sender, EventArgs e)
         {
+            ImportarBBDD();
+            ActualizarDatosForm();
+        }
+
+        private void ImportarBBDD()
+        {
             try
             {
                 mundo.ListaPaises = ConexionDB.TraerDatos();
-                ActualizarDatosForm();
             }
             catch (SqlException)
             {

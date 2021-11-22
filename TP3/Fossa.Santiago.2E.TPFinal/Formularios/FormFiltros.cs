@@ -54,8 +54,20 @@ namespace Formularios
 
         private void btnExpJson_Click(object sender, EventArgs e)
         {
-            Json.Serializar(mundo.ListaPaises, nombreArchivo);
-        }
+            try
+            {
+                Json.Serializar(mundo.ListaPaises, nombreArchivo);
+                MessageBox.Show("Se exporto a Json con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(System.IO.DirectoryNotFoundException)
+            {
+                MessageBox.Show("No se encontro el directorio", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error al exportar el archivo", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+}
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {

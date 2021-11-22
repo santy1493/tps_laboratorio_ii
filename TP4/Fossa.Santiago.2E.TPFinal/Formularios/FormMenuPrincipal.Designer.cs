@@ -223,22 +223,26 @@ namespace Formularios
             // 
             // btnExpDB
             // 
-            this.btnExpDB.Location = new System.Drawing.Point(742, 13);
+            this.btnExpDB.BackColor = System.Drawing.Color.Orange;
+            this.btnExpDB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExpDB.Location = new System.Drawing.Point(742, 7);
             this.btnExpDB.Name = "btnExpDB";
-            this.btnExpDB.Size = new System.Drawing.Size(150, 23);
+            this.btnExpDB.Size = new System.Drawing.Size(150, 41);
             this.btnExpDB.TabIndex = 10;
-            this.btnExpDB.Text = "Exp DB";
-            this.btnExpDB.UseVisualStyleBackColor = true;
+            this.btnExpDB.Text = "Exportar a BBDD";
+            this.btnExpDB.UseVisualStyleBackColor = false;
             this.btnExpDB.Click += new System.EventHandler(this.btnExpDB_Click);
             // 
             // btnImpDB
             // 
+            this.btnImpDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnImpDB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnImpDB.Location = new System.Drawing.Point(244, 12);
             this.btnImpDB.Name = "btnImpDB";
-            this.btnImpDB.Size = new System.Drawing.Size(155, 23);
+            this.btnImpDB.Size = new System.Drawing.Size(155, 36);
             this.btnImpDB.TabIndex = 11;
-            this.btnImpDB.Text = "imp DB";
-            this.btnImpDB.UseVisualStyleBackColor = true;
+            this.btnImpDB.Text = "Importar de BBDD";
+            this.btnImpDB.UseVisualStyleBackColor = false;
             this.btnImpDB.Click += new System.EventHandler(this.btnImpDB_Click);
             // 
             // lblCargandoGrilla
@@ -246,7 +250,7 @@ namespace Formularios
             this.lblCargandoGrilla.AutoSize = true;
             this.lblCargandoGrilla.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCargandoGrilla.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCargandoGrilla.Location = new System.Drawing.Point(417, 174);
+            this.lblCargandoGrilla.Location = new System.Drawing.Point(415, 257);
             this.lblCargandoGrilla.Name = "lblCargandoGrilla";
             this.lblCargandoGrilla.Size = new System.Drawing.Size(312, 32);
             this.lblCargandoGrilla.TabIndex = 12;

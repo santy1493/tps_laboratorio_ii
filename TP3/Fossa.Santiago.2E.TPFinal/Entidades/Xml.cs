@@ -16,7 +16,7 @@ namespace Entidades
         {
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
-            + @"\Archivos TP4\XML\";
+            + @"\Archivos TP3\XML\";
 
             if (!Directory.Exists(path))
             {
