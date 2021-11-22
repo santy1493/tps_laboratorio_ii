@@ -31,6 +31,12 @@ namespace Formularios
 
         }
 
+
+        /// <summary>
+        /// Abre el form para Cargar un pais
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaPais_Click(object sender, EventArgs e)
         {
 
@@ -40,6 +46,9 @@ namespace Formularios
 
         }
 
+        /// <summary>
+        /// Llena el dgvPaises con los paises de mundo.ListaPaises
+        /// </summary>
         private void LlenarGrilla()
         {
             if (mundo.ListaPaises.Count > 0)
@@ -64,21 +73,57 @@ namespace Formularios
 
         }
 
+        /// <summary>
+        /// Llama al metodo serializar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExportar_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                Xml.Serializar(mundo.ListaPaises, "ListaDePaises");
+                MessageBox.Show($"Se exporto el archivo con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (System.IO.DirectoryNotFoundException)
+            {
+                MessageBox.Show($"No se encontro el directorio", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
-
-            Xml.Serializar(mundo.ListaPaises, "ListaDePaises");
         }
 
+        /// <summary>
+        /// Llama al metodo deserializar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            mundo = new Mundo();
-            mundo.ListaPaises = Xml.Deserializar<List<Pais>>();
-            ActualizarDatosForm();
+            try
+            {
+                mundo = new Mundo();
+                mundo.ListaPaises = Xml.Deserializar<List<Pais>>();
+                ActualizarDatosForm();
+            }
+            catch(System.IO.DirectoryNotFoundException)
+            {
+                MessageBox.Show($"No se encontro el directorio", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                MessageBox.Show($"No se encontro el archivo", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"No se pudo importar el archivo", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
+        /// <summary>
+        /// Llama a los metodos LLenarGrilla, ActualizarLabelCantPaises y ActualizarBotones
+        /// </summary>
         private void ActualizarDatosForm()
         {
             LlenarGrilla();
@@ -86,6 +131,9 @@ namespace Formularios
             ActualizarBotones();
         }
 
+        /// <summary>
+        /// Actualiza el lblCantPaises con la cantidad actual de paises en mundo.ListaPaises
+        /// </summary>
         private void ActualizarLabelCantPaises()
         {
             if (!(mundo is null))
@@ -94,6 +142,7 @@ namespace Formularios
                 this.lblCantPaises.Text = $"Cantidad de Paises: {cantPaises}";
             }
         }
+
 
         private void IniciarForm()
         {
@@ -112,6 +161,10 @@ namespace Formularios
 
         }
 
+
+        /// <summary>
+        /// Si la cantidad de paises en mundo.ListaPaises en mayor a 0 habilita el boton de informes
+        /// </summary>
         private void ActualizarBotones()
         {
             if (cantPaises > 0)
@@ -120,6 +173,12 @@ namespace Formularios
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorraPais_Click(object sender, EventArgs e)
         {
 
@@ -135,6 +194,11 @@ namespace Formularios
             ActualizarDatosForm();
         }
 
+        /// <summary>
+        /// Guarda el nombre de pais de la fila seleccionada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvPaises_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -142,12 +206,22 @@ namespace Formularios
 
         }
 
+        /// <summary>
+        /// Abre el form de informes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInformes_Click(object sender, EventArgs e)
         {
             lblDatosPorContinente formInformes = new lblDatosPorContinente(mundo);
             formInformes.ShowDialog();
         }
 
+        /// <summary>
+        /// Exporta a la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExpDB_Click(object sender, EventArgs e)
         {
             try
@@ -160,6 +234,11 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Importa desde la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImpDB_Click(object sender, EventArgs e)
         {
             try
@@ -173,11 +252,18 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Deshabilita el boton de informes
+        /// </summary>
         private void DeshabilitarBotonInformes()
         {
             btnInformes.Enabled = false;
         }
 
+
+        /// <summary>
+        /// Limpia la grilla de paises
+        /// </summary>
         private void BorrarDatosGrilla()
         {
             dgvPaises.Rows.Clear();

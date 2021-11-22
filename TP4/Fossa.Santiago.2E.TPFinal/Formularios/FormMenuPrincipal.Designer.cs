@@ -56,7 +56,7 @@ namespace Formularios
             this.btnAltaPais.BackColor = System.Drawing.Color.Black;
             this.btnAltaPais.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAltaPais.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAltaPais.Location = new System.Drawing.Point(31, 213);
+            this.btnAltaPais.Location = new System.Drawing.Point(31, 192);
             this.btnAltaPais.Name = "btnAltaPais";
             this.btnAltaPais.Size = new System.Drawing.Size(168, 40);
             this.btnAltaPais.TabIndex = 0;
@@ -132,7 +132,7 @@ namespace Formularios
             this.btnInformes.BackColor = System.Drawing.Color.Black;
             this.btnInformes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInformes.Location = new System.Drawing.Point(31, 349);
+            this.btnInformes.Location = new System.Drawing.Point(31, 306);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Size = new System.Drawing.Size(168, 42);
             this.btnInformes.TabIndex = 2;
@@ -142,12 +142,15 @@ namespace Formularios
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(61, 184);
+            this.btnExportar.BackColor = System.Drawing.Color.Black;
+            this.btnExportar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExportar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExportar.Location = new System.Drawing.Point(31, 418);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(110, 23);
+            this.btnExportar.Size = new System.Drawing.Size(168, 39);
             this.btnExportar.TabIndex = 3;
-            this.btnExportar.Text = "ExportarXML";
-            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Text = "Exportar XML";
+            this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnImportar
@@ -155,7 +158,7 @@ namespace Formularios
             this.btnImportar.BackColor = System.Drawing.Color.Black;
             this.btnImportar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnImportar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnImportar.Location = new System.Drawing.Point(31, 423);
+            this.btnImportar.Location = new System.Drawing.Point(31, 363);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(168, 39);
             this.btnImportar.TabIndex = 4;
@@ -168,7 +171,7 @@ namespace Formularios
             this.btnBorraPais.BackColor = System.Drawing.Color.Black;
             this.btnBorraPais.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBorraPais.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBorraPais.Location = new System.Drawing.Point(31, 279);
+            this.btnBorraPais.Location = new System.Drawing.Point(31, 249);
             this.btnBorraPais.Name = "btnBorraPais";
             this.btnBorraPais.Size = new System.Drawing.Size(168, 40);
             this.btnBorraPais.TabIndex = 5;
@@ -215,9 +218,8 @@ namespace Formularios
             this.lblCantPaises.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCantPaises.Location = new System.Drawing.Point(742, 60);
             this.lblCantPaises.Name = "lblCantPaises";
-            this.lblCantPaises.Size = new System.Drawing.Size(45, 17);
+            this.lblCantPaises.Size = new System.Drawing.Size(0, 17);
             this.lblCantPaises.TabIndex = 9;
-            this.lblCantPaises.Text = "label4";
             // 
             // btnExpDB
             // 

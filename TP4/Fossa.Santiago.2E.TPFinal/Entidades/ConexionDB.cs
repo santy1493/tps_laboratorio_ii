@@ -10,15 +10,22 @@ namespace Entidades
         static SqlCommand comando;
         static SqlDataReader reader;
 
+        /// <summary>
+        /// Establece los parametros de conexion con la base de datos
+        /// </summary>
         static ConexionDB()
         {
-            conexion = new SqlConnection("Server = DESKTOP-9UNRGHS; Database = PAISES_DB; Trusted_Connection = True;");
+            conexion = new SqlConnection("Server = DESKTOP-9UNRGHS; Database = TP4_FOSSA; Trusted_Connection = True;");
 
             comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
             comando.Connection = conexion;
         }
 
+        /// <summary>
+        /// Trae todos los paises de la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Pais> TraerDatos()
         {
 
@@ -55,6 +62,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Guarda todos los paises de la lista en la base de datos
+        /// </summary>
+        /// <param name="listaPaises"></param>
         public static void Insertar(List<Pais> listaPaises)
         {
             BorrarDatosTabla();
