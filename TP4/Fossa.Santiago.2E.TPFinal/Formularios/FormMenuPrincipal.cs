@@ -15,7 +15,6 @@ namespace Formularios
     public partial class FormMenuPrincipal : Form
     {
         Mundo mundo;
-        static int cantPaises = 0;
         static string nombrePais;
         DelegadoIniciarForm delegadoIniciarForm;
 
@@ -26,6 +25,7 @@ namespace Formularios
             ImportarBBDD();
             btnImpDB.Enabled = false;
             btnInformes.Enabled = false;
+            dgvPaises.Enabled = false;
             dgvPaises.Hide();
             Task iniciarForm = Task.Run(() => IniciarForm());
             this.mundo.paisBorrado += DeshabilitarBotonInformes;
@@ -55,6 +55,8 @@ namespace Formularios
         {
             if (mundo.ListaPaises.Count > 0)
             {
+                dgvPaises.Enabled = true;
+
                 dgvPaises.Rows.Clear();
 
                 int n;
@@ -104,7 +106,6 @@ namespace Formularios
         {
             try
             {
-                mundo = new Mundo();
                 mundo.ListaPaises = Xml.Deserializar<List<Pais>>();
                 ActualizarDatosForm();
             }
@@ -138,11 +139,15 @@ namespace Formularios
         /// </summary>
         private void ActualizarLabelCantPaises()
         {
-            if (!(mundo is null))
+            if (!(mundo is null) && mundo.ListaPaises.Count>0)
             {
-                cantPaises = mundo.ListaPaises.Count();
-                this.lblCantPaises.Text = $"Cantidad de Paises: {cantPaises}";
+                this.lblCantPaises.Text = $"Cantidad de Paises: {mundo.ListaPaises.Count}";
             }
+            else
+            {
+                this.lblCantPaises.Text = string.Empty;
+            }
+
         }
 
 
@@ -170,10 +175,11 @@ namespace Formularios
         /// </summary>
         private void ActualizarBotones()
         {
-            if (cantPaises > 0)
+            if (mundo.ListaPaises.Count > 0)
             {
                 btnInformes.Enabled = true;
             }
+
         }
 
 
@@ -283,6 +289,28 @@ namespace Formularios
         private void BorrarDatosGrilla()
         {
             dgvPaises.Rows.Clear();
+            dgvPaises.Enabled = false;
+        }
+
+        private void btnBorrarLista_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (mundo.BorrarLista())
+                {
+                    MessageBox.Show("Se borro la lista con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("La lista no contiene ningun pais", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                ActualizarDatosForm();
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Se produjo un error al borrar la lista", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
     }
 }

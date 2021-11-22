@@ -74,7 +74,7 @@ namespace Formularios
         {
             Mundo mundoFiltrado = new Mundo();
             mundoFiltrado.ListaPaises = mundo.FiltrarDiezMasCantidadInfectados();
-            FormFiltros formFiltros = new FormFiltros("TOP 10 Mas Cantidad Infectados", "10MasCantInfectados", mundoFiltrado);
+            FormFiltros formFiltros = new FormFiltros("10 Mas Cantidad Infectados", "10MasCantInfectados", mundoFiltrado);
             formFiltros.ShowDialog();
         }
 
@@ -82,7 +82,7 @@ namespace Formularios
         {
             Mundo mundoFiltrado = new Mundo();
             mundoFiltrado.ListaPaises = mundo.FiltrarDiezMasCantidadFallecidos();
-            FormFiltros formFiltros = new FormFiltros("TOP 10 Mas Cantidad Fallecidos", "10MasCantFallecidos", mundoFiltrado);
+            FormFiltros formFiltros = new FormFiltros("10 Mas Cantidad Fallecidos", "10MasCantFallecidos", mundoFiltrado);
             formFiltros.ShowDialog();
         }
 
@@ -90,7 +90,7 @@ namespace Formularios
         {
             Mundo mundoFiltrado = new Mundo();
             mundoFiltrado.ListaPaises = mundo.FiltrarDiezMenosPorcentajeFallecidos();
-            FormFiltros formFiltros = new FormFiltros("TOP 10 Menos Porcentaje Fallecidos", "10MenosPorcFallecidos", mundoFiltrado);
+            FormFiltros formFiltros = new FormFiltros("10 Menos Porcentaje Fallecidos", "10MenosPorcFallecidos", mundoFiltrado);
             formFiltros.ShowDialog();
         }
 
@@ -99,6 +99,14 @@ namespace Formularios
             Mundo mundoFiltrado = new Mundo();
             mundoFiltrado.ListaPaises = mundo.FiltrarPorContinente(cmbContinenteFiltro.Text);
             FormFiltros formFiltros = new FormFiltros($"Paises de {cmbContinenteFiltro.Text}", $"PaisesDe{cmbContinenteFiltro.Text}", mundoFiltrado);
+            formFiltros.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Mundo mundoFiltrado = new Mundo();
+            mundoFiltrado.ListaPaises = mundo.FiltrarDiezMasPorcentajeVacunados();
+            FormFiltros formFiltros = new FormFiltros("10 Mas Porcentaje Vacunados", "10MasPorcVacunados", mundoFiltrado);
             formFiltros.ShowDialog();
         }
     }

@@ -52,6 +52,7 @@ namespace Formularios
             this.label5 = new System.Windows.Forms.Label();
             this.cmbContinenteFiltro = new System.Windows.Forms.ComboBox();
             this.btnFiltrarContinente = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInforme)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,7 +224,7 @@ namespace Formularios
             this.btnDiezMasCantInfectados.Name = "btnDiezMasCantInfectados";
             this.btnDiezMasCantInfectados.Size = new System.Drawing.Size(243, 39);
             this.btnDiezMasCantInfectados.TabIndex = 11;
-            this.btnDiezMasCantInfectados.Text = "TOP 10 Mas Cantidad Infectados";
+            this.btnDiezMasCantInfectados.Text = "10 Mas Cantidad Infectados";
             this.btnDiezMasCantInfectados.UseVisualStyleBackColor = false;
             this.btnDiezMasCantInfectados.Click += new System.EventHandler(this.btnDiezMasCantInfectados_Click);
             // 
@@ -236,7 +237,7 @@ namespace Formularios
             this.btnDiezMasCantFallecidos.Name = "btnDiezMasCantFallecidos";
             this.btnDiezMasCantFallecidos.Size = new System.Drawing.Size(243, 39);
             this.btnDiezMasCantFallecidos.TabIndex = 12;
-            this.btnDiezMasCantFallecidos.Text = "TOP 10 Mas Cantidad Fallecidos";
+            this.btnDiezMasCantFallecidos.Text = "10 Mas Cantidad Fallecidos";
             this.btnDiezMasCantFallecidos.UseVisualStyleBackColor = false;
             this.btnDiezMasCantFallecidos.Click += new System.EventHandler(this.btnDiezMasCantFallecidos_Click);
             // 
@@ -249,7 +250,7 @@ namespace Formularios
             this.btnDiezMenosPorcFallecidos.Name = "btnDiezMenosPorcFallecidos";
             this.btnDiezMenosPorcFallecidos.Size = new System.Drawing.Size(243, 39);
             this.btnDiezMenosPorcFallecidos.TabIndex = 13;
-            this.btnDiezMenosPorcFallecidos.Text = "TOP 10 Menos Porcentaje Fallecidos";
+            this.btnDiezMenosPorcFallecidos.Text = "10 Menos Porcentaje Fallecidos";
             this.btnDiezMenosPorcFallecidos.UseVisualStyleBackColor = false;
             this.btnDiezMenosPorcFallecidos.Click += new System.EventHandler(this.btnDiezMenosPorcFallecidos_Click);
             // 
@@ -285,12 +286,26 @@ namespace Formularios
             this.btnFiltrarContinente.UseVisualStyleBackColor = false;
             this.btnFiltrarContinente.Click += new System.EventHandler(this.btnFiltrarContinente_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(12, 554);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(243, 39);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "10 Mas Porcentaje Vacunados";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // lblDatosPorContinente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1131, 712);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnFiltrarContinente);
             this.Controls.Add(this.cmbContinenteFiltro);
             this.Controls.Add(this.label5);
@@ -341,5 +356,6 @@ namespace Formularios
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbContinenteFiltro;
         private System.Windows.Forms.Button btnFiltrarContinente;
+        private System.Windows.Forms.Button button1;
     }
 }

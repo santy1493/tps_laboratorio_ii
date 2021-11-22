@@ -81,6 +81,17 @@ namespace Entidades
             return false;
         }
 
+        public bool BorrarLista()
+        {
+            if(!(this.listaPaises is null) && this.listaPaises.Count>0)
+            {
+                this.listaPaises.Clear();
+                this.paisBorrado.Invoke();
+                return true;
+            }
+            return false;
+        }
+
         #region Estadisticas
 
         /// <summary>
@@ -463,6 +474,18 @@ namespace Entidades
             List<Pais> listaPaises = this.ListaPaises.FindAll(p => p.Continente == continente);
             return listaPaises;
         }
+
+
+        /// <summary>
+        /// Filtra los diez paises con menos porcentaje de fallecidos 
+        /// </summary>
+        /// <returns></returns>
+        public List<Pais> FiltrarDiezMasPorcentajeVacunados()
+        {
+            List<Pais> listaPaises = this.ListaPaises.OrderByDescending(p => p.PorcentajeVacunados()).ToList();
+            return listaPaises.GetRange(0, 10);
+        }
+
         #endregion
 
     }

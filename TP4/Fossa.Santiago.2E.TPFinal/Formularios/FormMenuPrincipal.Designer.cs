@@ -48,6 +48,7 @@ namespace Formularios
             this.btnExpDB = new System.Windows.Forms.Button();
             this.btnImpDB = new System.Windows.Forms.Button();
             this.lblCargandoGrilla = new System.Windows.Forms.Label();
+            this.btnBorrarLista = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaises)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@ namespace Formularios
             this.btnAltaPais.BackColor = System.Drawing.Color.Black;
             this.btnAltaPais.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAltaPais.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAltaPais.Location = new System.Drawing.Point(31, 192);
+            this.btnAltaPais.Location = new System.Drawing.Point(31, 157);
             this.btnAltaPais.Name = "btnAltaPais";
             this.btnAltaPais.Size = new System.Drawing.Size(168, 40);
             this.btnAltaPais.TabIndex = 0;
@@ -132,7 +133,7 @@ namespace Formularios
             this.btnInformes.BackColor = System.Drawing.Color.Black;
             this.btnInformes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnInformes.Location = new System.Drawing.Point(31, 306);
+            this.btnInformes.Location = new System.Drawing.Point(31, 337);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Size = new System.Drawing.Size(168, 42);
             this.btnInformes.TabIndex = 2;
@@ -145,7 +146,7 @@ namespace Formularios
             this.btnExportar.BackColor = System.Drawing.Color.Black;
             this.btnExportar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnExportar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExportar.Location = new System.Drawing.Point(31, 418);
+            this.btnExportar.Location = new System.Drawing.Point(31, 449);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(168, 39);
             this.btnExportar.TabIndex = 3;
@@ -158,7 +159,7 @@ namespace Formularios
             this.btnImportar.BackColor = System.Drawing.Color.Black;
             this.btnImportar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnImportar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnImportar.Location = new System.Drawing.Point(31, 363);
+            this.btnImportar.Location = new System.Drawing.Point(31, 394);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(168, 39);
             this.btnImportar.TabIndex = 4;
@@ -171,7 +172,7 @@ namespace Formularios
             this.btnBorraPais.BackColor = System.Drawing.Color.Black;
             this.btnBorraPais.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBorraPais.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBorraPais.Location = new System.Drawing.Point(31, 249);
+            this.btnBorraPais.Location = new System.Drawing.Point(31, 213);
             this.btnBorraPais.Name = "btnBorraPais";
             this.btnBorraPais.Size = new System.Drawing.Size(168, 40);
             this.btnBorraPais.TabIndex = 5;
@@ -256,12 +257,26 @@ namespace Formularios
             this.lblCargandoGrilla.TabIndex = 12;
             this.lblCargandoGrilla.Text = "Cargando lista de paises...";
             // 
+            // btnBorrarLista
+            // 
+            this.btnBorrarLista.BackColor = System.Drawing.Color.Black;
+            this.btnBorrarLista.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBorrarLista.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBorrarLista.Location = new System.Drawing.Point(31, 273);
+            this.btnBorrarLista.Name = "btnBorrarLista";
+            this.btnBorrarLista.Size = new System.Drawing.Size(168, 42);
+            this.btnBorrarLista.TabIndex = 13;
+            this.btnBorrarLista.Text = "Borrar la Lista";
+            this.btnBorrarLista.UseVisualStyleBackColor = false;
+            this.btnBorrarLista.Click += new System.EventHandler(this.btnBorrarLista_Click);
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(916, 500);
+            this.Controls.Add(this.btnBorrarLista);
             this.Controls.Add(this.lblCargandoGrilla);
             this.Controls.Add(this.btnImpDB);
             this.Controls.Add(this.btnExpDB);
@@ -306,6 +321,7 @@ namespace Formularios
         private System.Windows.Forms.Button btnExpDB;
         private System.Windows.Forms.Button btnImpDB;
         private System.Windows.Forms.Label lblCargandoGrilla;
+        private System.Windows.Forms.Button btnBorrarLista;
     }
 }
 
