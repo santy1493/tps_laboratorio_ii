@@ -1,0 +1,13 @@
+C:\Users\santy\Desktop\covid app\Formularios.exe
+C:\Users\santy\Desktop\covid app\Formularios.dll
+C:\Users\santy\Desktop\covid app\Formularios.deps.json
+C:\Users\santy\Desktop\covid app\Formularios.runtimeconfig.json
+C:\Users\santy\Desktop\covid app\Formularios.pdb
+C:\Users\santy\Desktop\covid app\System.Data.SqlClient.dll
+C:\Users\santy\Desktop\covid app\runtimes\win-arm64\native\sni.dll
+C:\Users\santy\Desktop\covid app\runtimes\win-x64\native\sni.dll
+C:\Users\santy\Desktop\covid app\runtimes\win-x86\native\sni.dll
+C:\Users\santy\Desktop\covid app\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\santy\Desktop\covid app\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\santy\Desktop\covid app\Entidades.dll
+C:\Users\santy\Desktop\covid app\Entidades.pdb
